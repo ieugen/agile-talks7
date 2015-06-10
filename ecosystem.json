@@ -16,7 +16,7 @@
       "user": "ieugen",
       "host": "daos.ieugen.ro",
       "ref": "origin/master",
-      "repo": "git@github.com:ieugen/agile-talks7.git",
+      "repo": "https://github.com/ieugen/agile-talks7.git",
       "path": "/home/ieugen/agile-talks",
       "post-deploy": "export PATH=$PATH:~/.nvm/versions/io.js/v2.0.1/bin && npm install && pm2 startOrRestart ecosystem.json --env production"
     }
