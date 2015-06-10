@@ -1,0 +1,25 @@
+{
+  "apps": [{
+    "name": "AgileTalks",
+    "script": "bin/www",
+    "ignore_watch" : ["node_modules"],
+    "watch": ["models/**", "config/**", "modules/**", "routes/**", "views/**", ".*"],
+    "env": {},
+    "env_production": {
+      "PORT":3030,
+      "NODE_ENV": "production"
+    }
+  }],
+
+  "deploy": {
+    "production": {
+      "user": "ieugen",
+      "host": "daos.ieugen.ro",
+      "ref": "origin/master",
+      "repo": "git@github.com:ieugen/agile-talks7.git",
+      "path": "/home/ieugen/agile-talks",
+      "post-deploy": "export PATH=$PATH:~/.nvm/versions/io.js/v2.0.1/bin && npm install && pm2 startOrRestart ecosystem.json --env production"
+    }
+  }
+}
+
